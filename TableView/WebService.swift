@@ -2,13 +2,16 @@
 
 import UIKit
 
-enum ApiError {                                 // MARK: - API_ERROR
+enum ApiError {
+    
     case urlError
     case serviceError(Error)
 }
 
 
-final class WebService {                        // MARK: - WEB_SERVICE
+
+
+final class WebService {
     
     private init(){}
     
@@ -31,5 +34,5 @@ final class WebService {                        // MARK: - WEB_SERVICE
     
     
 }
-
+ 
 

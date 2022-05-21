@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116DBC3A2839360400695C34 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 116DBC392839360400695C34 /* Algorithms */; };
 		117793FF2807F31A00C1D707 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117793FE2807F31A00C1D707 /* Extensions.swift */; };
 		117794032807F36B00C1D707 /* Cell Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117794022807F36B00C1D707 /* Cell Identifiers.swift */; };
 		117794062807F38A00C1D707 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117794052807F38A00C1D707 /* Channel.swift */; };
@@ -24,6 +25,7 @@
 		119A08B7280E5E0E0070DD06 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117793FE2807F31A00C1D707 /* Extensions.swift */; };
 		119A08B8280E5E6B0070DD06 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F51183280780FC004544A1 /* WebService.swift */; };
 		119A08BA280E697A0070DD06 /* MatchingPairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A08B9280E697A0070DD06 /* MatchingPairsTests.swift */; };
+		11D02469282352720080DB5D /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 11D02468282352720080DB5D /* Algorithms */; };
 		11F511542807802B004544A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F511532807802B004544A1 /* AppDelegate.swift */; };
 		11F511562807802B004544A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F511552807802B004544A1 /* SceneDelegate.swift */; };
 		11F511582807802B004544A1 /* ChannelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F511572807802B004544A1 /* ChannelsVC.swift */; };
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116DBC3A2839360400695C34 /* Algorithms in Frameworks */,
+				11D02469282352720080DB5D /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +208,10 @@
 			dependencies = (
 			);
 			name = TableView;
+			packageProductDependencies = (
+				11D02468282352720080DB5D /* Algorithms */,
+				116DBC392839360400695C34 /* Algorithms */,
+			);
 			productName = javid;
 			productReference = 11F511502807802B004544A1 /* TableView.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +262,10 @@
 				Base,
 			);
 			mainGroup = 11F511472807802B004544A1;
+			packageReferences = (
+				11D02467282352720080DB5D /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				116DBC382839360400695C34 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 11F511512807802B004544A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +595,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		116DBC382839360400695C34 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		11D02467282352720080DB5D /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		116DBC392839360400695C34 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11D02467282352720080DB5D /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		11D02468282352720080DB5D /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11D02467282352720080DB5D /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11F511482807802B004544A1 /* Project object */;
 }

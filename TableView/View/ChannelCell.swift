@@ -8,7 +8,7 @@ final class ChannelCell: UITableViewCell, ChannelsVCCellProtocol {
     private var channelImageURL: String = "https://mobile-interview.s3.amazonaws.com/"
     private let insets = UIEdgeInsets(top:20, left:10, bottom:20, right:10)
     
-    private lazy var bgView: UIView = {
+    private var bgView: UIView = {
         let f = CGRect(x:10, y:6, width:self.frame.width-20, height:120)
         let view = UIView(frame:f)
         view.layer.backgroundColor = UIColor.black.cgColor

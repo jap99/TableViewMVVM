@@ -1,6 +1,7 @@
 // Copyright 2022: Javid A. Poornasir
 
 import UIKit
+import Algorithms
 
 final class ChannelsVC: UIViewController {
     
@@ -13,23 +14,18 @@ final class ChannelsVC: UIViewController {
         tableView.register(ChannelCell.self, forCellReuseIdentifier:CellID.channel.rawValue)
         return tableView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupVM()
         self.setupTV()
     }
-    
-    
-}
-
-extension ChannelsVC: ChannelsVCProtocol {                  // MARK: - CHANNELS_VC_PROTOCOL
-
+     
 }
 
 
-extension ChannelsVC {                                      // MARK: - SETUP
-    
+extension ChannelsVC {
+     
     private func setupVM() {
         if self.vm == nil {
             self.vm = ChannelsVM(self)
@@ -48,10 +44,11 @@ extension ChannelsVC {                                      // MARK: - SETUP
             self.tv.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
 }
 
-extension ChannelsVC: UITableViewDelegate {                // MARK: - TABLE_VIEW_DELEGATE
+extension ChannelsVC: ChannelsVCProtocol {}
+
+extension ChannelsVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
@@ -66,16 +63,20 @@ extension ChannelsVC: UITableViewDelegate {                // MARK: - TABLE_VIEW
     
 }
 
-extension ChannelsVC: UITableViewDataSource {               // MARK: - TABLE_VIEW_DATA_SOURCE
+extension ChannelsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let itemsCount = self.vm?.numberOfItemsInSection() else { return 0 }
+        guard let itemsCount = self.vm?.numberOfItemsInSection() else {
+            return 0
+        }
         return itemsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let channelCell = tableView.dequeueReusableCell(withIdentifier:CellID.channel.rawValue, for: indexPath) as? ChannelCell,
-              let cellVM = self.vm?.cellViewModelAt(indexPath) else { return UITableViewCell() }
+              let cellVM = self.vm?.cellViewModelAt(indexPath) else {
+            return UITableViewCell()
+        }
         channelCell.vm = cellVM
         cellVM.setView(channelCell)
         channelCell.configureCell()
@@ -84,10 +85,3 @@ extension ChannelsVC: UITableViewDataSource {               // MARK: - TABLE_VIE
     
     
 }
-
-
-
-
-
-
-

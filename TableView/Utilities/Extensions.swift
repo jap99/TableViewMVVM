@@ -1,6 +1,6 @@
 import UIKit
 
-extension CALayer {                                             // MARK: - CA_LAYER
+extension CALayer {                                             
     
     open func setBorder() {
         self.borderWidth = 1
@@ -11,7 +11,7 @@ extension CALayer {                                             // MARK: - CA_LA
 }
 
  
-class DrawCircles: UIImageView {                                // MARK: - UI_IMAGE_VIEW
+class DrawCircles: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
