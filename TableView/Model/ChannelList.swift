@@ -14,9 +14,9 @@ final class ChannelsList: Decodable {
     @discardableResult
     init(_ comp: @escaping ([Channel]) -> ()) {
         guard channels.isEmpty else { return }
-        self.fetchChannels { (channels) in
-            self.channels = channels
-            comp(channels)
+        fetchChannels { (ch) in
+            self.channels = ch
+            comp(self.channels)
         }
     }
     
